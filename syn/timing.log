@@ -1,0 +1,60 @@
+Warning: Design 'huffman' has '1' unresolved references. For more detailed information, use the "link" command. (UID-341)
+ 
+****************************************
+Report : timing
+        -path full
+        -delay max
+        -max_paths 1
+Design : huffman
+Version: S-2021.06-SP2
+Date   : Wed Sep 14 09:43:59 2022
+****************************************
+
+Operating Conditions: slow   Library: slow
+Wire Load Model Mode: top
+
+  Startpoint: reset (input port clocked by clk)
+  Endpoint: C1_reg[4][6]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  huffman            tsmc13_wl10           slow
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock clk (rise edge)                    0.00       0.00
+  clock network delay (ideal)              0.50       0.50
+  input external delay                     5.00       5.50 r
+  reset (in)                               0.10       5.60 r
+  U1112/Y (INVX3)                          0.40       6.00 f
+  U1411/Y (OAI21XL)                        0.42       6.42 r
+  U981/Y (INVX1)                           0.19       6.60 f
+  U973/Y (CLKBUFX3)                        0.25       6.86 f
+  U1097/Y (CLKBUFX3)                       0.19       7.05 f
+  U1089/Y (CLKBUFX3)                       0.39       7.45 f
+  U979/Y (OR2X2)                           0.55       8.00 f
+  U948/Y (INVX4)                           0.48       8.48 r
+  U1116/Y (NAND2X1)                        0.19       8.67 f
+  U1115/Y (CLKBUFX3)                       0.79       9.45 f
+  U1349/Y (AOI2BB2X1)                      0.49       9.94 f
+  U1348/Y (OAI221XL)                       0.29      10.24 r
+  C1_reg[4][6]/D (DFFQX1)                  0.00      10.24 r
+  data arrival time                                  10.24
+
+  clock clk (rise edge)                   10.00      10.00
+  clock network delay (ideal)              0.50      10.50
+  clock uncertainty                       -0.10      10.40
+  C1_reg[4][6]/CK (DFFQX1)                 0.00      10.40 r
+  library setup time                      -0.16      10.24
+  data required time                                 10.24
+  -----------------------------------------------------------
+  data required time                                 10.24
+  data arrival time                                 -10.24
+  -----------------------------------------------------------
+  slack (MET)                                         0.00
+
+
+1
